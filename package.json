@@ -1,8 +1,11 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mysql2": "^3.1.2"
+  "name": "api-receitas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/trezeguetdev/api-receitas.git",
+  "author": "Gustavo Menezes <verboty@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
   }
 }
