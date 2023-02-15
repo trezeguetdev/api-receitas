@@ -18,9 +18,7 @@ const pool = mysql.createPool({
 
 app.get('/receitas/entrada', async (req, res) => {
   try {
-    const conn = await pool.getConnection();
-    const [rows] = await conn.query('SELECT * FROM entrada');
-    conn.release();
+    const [rows] = await pool.query('SELECT * FROM entrada');
     res.json(rows);
   } catch (err) {
     console.error(err);
@@ -30,9 +28,7 @@ app.get('/receitas/entrada', async (req, res) => {
 
 app.get('/receitas/pratoprincipal', async (req, res) => {
   try {
-    const conn = await pool.getConnection();
-    const [rows] = await conn.query('SELECT * FROM pratoprincipal');
-    conn.release();
+    const [rows] = await pool.query('SELECT * FROM pratoprincipal');
     res.json(rows);
   } catch (err) {
     console.error(err);
@@ -42,9 +38,7 @@ app.get('/receitas/pratoprincipal', async (req, res) => {
 
 app.get('/receitas/sobremesa', async (req, res) => {
   try {
-    const conn = await pool.getConnection();
-    const [rows] = await conn.query('SELECT * FROM sobremesa');
-    conn.release();
+    const [rows] = await pool.query('SELECT * FROM sobremesa');
     res.json(rows);
   } catch (err) {
     console.error(err);
@@ -54,9 +48,7 @@ app.get('/receitas/sobremesa', async (req, res) => {
 
 app.get('/receitas/vegano', async (req, res) => {
   try {
-    const conn = await pool.getConnection();
-    const [rows] = await conn.query('SELECT * FROM pratovegano');
-    conn.release();
+    const [rows] = await pool.query('SELECT * FROM pratovegano');
     res.json(rows);
   } catch (err) {
     console.error(err);
