@@ -4,18 +4,16 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+
 
 app.use(cors());
 
 const pool = mysql.createPool({
-  host:
-  user:
-  password:
-  database: 
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
 app.get('/receitas/entrada', async (req, res) => {
@@ -66,6 +64,6 @@ app.get('/receitas/vegano', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}.`);
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor rodando na porta ${process.env.PORT}.`);
 });
